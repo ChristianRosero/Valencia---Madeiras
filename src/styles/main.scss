@@ -1,0 +1,13 @@
+// base styles
+
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'type';
+@import 'tables';
+@import 'forms';
+@import 'utilities';
+
+body {
+  background-color: $main-color;
+}
