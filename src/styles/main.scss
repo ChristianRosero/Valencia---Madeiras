@@ -17,3 +17,60 @@ header {
   width: 100%;
   height: 20%;
 }
+
+.slide-images {
+  width: 100%;
+  height: 550px;
+  //background-image: url(images/pavLam1.jpg);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container-products {
+  padding-top: 110px;
+}
+
+.floor {
+  width: auto;
+  height: 460px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: grey;
+}
+
+.strips {
+  width: 320px;
+  height: 400px;
+  background-color: grey;
+  margin-left: 10%;
+  margin-top: 80px;
+  display: flex;
+  float: left;
+}
+
+.videos {
+  width: 740px;
+  height: 400px;
+  display: flex;
+  float: right;
+  margin-right: 10%;
+  margin-top: 80px;
+  background-color: grey;
+}
+
+.titlePromos {
+  margin-left: 10%;
+  padding-top: 110px;
+}
+.sales {
+  margin-left: 10%;
+  display: flex;
+}
+
+.promo {
+  border: 2px solid grey;
+  height: 200px;
+  width: 33%;
+  margin: 10px 10px;
+}
