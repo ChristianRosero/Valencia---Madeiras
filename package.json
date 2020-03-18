@@ -14,7 +14,9 @@
     "gulp-babel": "^7.0.1",
     "gulp-eslint": "^5.0.0",
     "prettier": "^1.16.1",
-    "purgecss": "^1.4.0"
+    "purgecss": "^1.4.0",
+    "stylelint": "^13.2.1",
+    "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {
     "browser-sync": "^2.18.8",

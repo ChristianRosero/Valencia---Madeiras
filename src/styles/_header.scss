@@ -1,7 +1,7 @@
 header img {
     align-items: center;
     display: flex;
-    height: 100px;
+    height: auto;
     justify-content: center;
     margin-left: 10%;
     text-align: center;
@@ -21,7 +21,6 @@ header img {
 }
 
 .clientArea {
-    border: 2px solid grey;
     height: 20px;
     width: 20px;
     float: left;
@@ -31,7 +30,6 @@ header img {
 }
 
 .cart {
-    border: 2px solid grey;
     height: 20px;
     width: 20px;
     float: right;
@@ -39,32 +37,78 @@ header img {
     margin-right: 1%;
 }
 
+span {
+    background-color: $main-color;
+}
+
 .navbar {
     width: 100%;
     height: 45px;
     background-color: $main-color;
+    display: none;
+    line-height: 24px;
+
+    li {
+        float: left;
+        padding-right: 8%;
+        text-transform: uppercase;
+        padding-top: 10px;
+    }
+    ul {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+    }
 }
 
-.navbar li {
-    float: left;
-    padding-right: 10%;
-    box-sizing: border-box;
-    text-transform: uppercase;
-    padding-top: 10px;
-}
-
-.navbar ul {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    list-style-type: none;
-}
 
 .navbar a:hover h2 {
     background: $second-color;
     transition: 0.5s;
 }
+
+.menu {
+    width: 100%;
+    height: 35px;
+    background-color: $main-color;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+}
+
+/* screen size 401 and up */
+
+@media only screen and (min-width: 401px)
+	{
+        .menu {
+            display: block;
+        }
+        .container-header {
+            display: block;
+        }
+    }
+
+@media only screen and (max-width: 400px)
+    {
+        .search {
+            display: none;
+        }
+        //.container-header img {
+            
+        //}
+    }
+
+    @media only screen and (min-width: 768px)
+	{
+        .menu {
+            display: none;
+        }
+
+        .navbar {
+            display: block;
+        }
+    }
