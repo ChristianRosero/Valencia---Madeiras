@@ -13,17 +13,24 @@
   <header>
     <div class="container-header">
       <!--Logo-->
-      <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="logo">
+        </a>
+      </div>
       <!--Search bar-->
       <div class="search">
         <input type="text" name="search" placeholder="Search..">
       </div>
-      <!---->
+      <!--User icon-->
       <span class="clientArea">
         <i class="fas fa-user"></i>
       </span>
+      <!--Cart icon-->
       <span class="cart">
-        <i class="fas fa-shopping-cart"></i>
+        <a href="cart.html">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
       </span>
     </div>  
       <div class="clearfix"></div>
@@ -55,38 +62,38 @@
   </header>
 
   <main>
-<!-- Slide of images to show the best images of products-->
-<div class="slideshow-container">
+  <!-- Slide of images to show the best images of products-->
+  <div class="slideshow-container">
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <img src="images/pavLam2.jpg" style="width: 100%;">
-    <div class="text">
-      <h1>O Pavimento adequado para si!</h1>
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <img src="images/pavLam2.jpg">
+      <div class="text">
+        <h1>O Pavimento adequado para si!</h1>
+      </div>
     </div>
-  </div>
 
-  <div class="mySlides fade">
-    <img src="images/revMad.png" style="width: 100%;">
-    <div class="text">
-      <h1>Revestimentos de Decoração</h1>
+    <div class="mySlides fade">
+      <img src="images/revMad.png">
+      <div class="text">
+        <h1>Revestimentos de Decoração</h1>
+      </div>
     </div>
-  </div>
 
-  <div class="mySlides fade">
-    <img src="images/rodape.jpg" style="width: 100%;">
-    <div class="text">
-      <h1>Ampla gama de Rodapés</h1>
+    <div class="mySlides fade">
+      <img src="images/rodape.jpg">
+      <div class="text">
+        <h1>Ampla gama de Rodapés</h1>
+      </div>
     </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
+  <br>
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- The dots/circles -->
+  <!-- The dots/circles -->
   <div style="text-align: center;">
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
@@ -95,55 +102,55 @@
 
 
 
-    <div class="clearfix"></div>
+  <div class="clearfix"></div>
 
-<!-- Section with links to some pages -->
-    <div class="container-products">
-      <div class="floor">
-        <div class="comment"></div>
-      </div>
-      <div class="strips"></div>
-      <div class="videos"></div>
-    </div>
-    <div class="clearfix"></div>
-
-<!-- This is the section for sales -->
-    <div class="titlePromos">
-      <h1>As Melhores Pomoções!</h1>
-    </div>
-    <div class="container">
-      <div class="sales">
-        <div class="promo">1123</div>
-        <div class="promo">2</div>
-        <div class="promo">3</div>
-        <div class="promo">4</div>
-        <div class="promo">5</div>
-        <div class="promo">6</div>
+  <!-- Section with links to some pages -->
+  <div class="container-products">
+        <div class="comment">
+        <h2>Aprenda a aplicar pavimento</h2>
+      <div class="floor col-12">
       </div>
     </div>
+    <div class="strips col-3 col-xs-12 col-s-5"></div>
+    <div class="videos col-8 col-xs-12 col-s-5"></div>
+  </div>
+  <div class="clearfix"></div>
+  <br><br><br>
+
+<!-- This is the section for sales
+  <div class="titlePromos">
+    <h1>As Melhores Pomoções!</h1>
+  </div>
+  <div class="container">
+    <div class="sales">
+      <div class="promo col-3 col-xs-12">1</div>
+      <div class="promo col-3 col-xs-12">2</div>
+      <div class="promo col-3 col-xs-12">3</div>
+    </div>
+  </div> -->
 </main>
-
+<div class="clearfix"></div>
 <footer>
-    <div class="footer">
-      <div class="contacts">
-        <h2>
-          <span class="iconify" data-icon="feather:phone" data-inline="false"></span> Apoio ao Cliente: <b>900 476 834</b>
-        </h2>
-        <br>
-        <h2>
-          <b><span class="iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span> valencia.madeiras@gmail.com</b>
-        </h2>
-      </div>
-      <div>
-        <div class="policy">
-          <p><a href="">Termos e Condições Gerais</a>  <br>
-            <a href="">Política de Privacidade e Cookies</a>  <br>
-            <a href="">Recrutamento</a> 
-          </p>
-          
-        </div>
+  <div class="footer">
+    <div class="contacts">
+      <h2>
+        <span class="iconify" data-icon="feather:phone" data-inline="false"></span> Apoio ao Cliente: <b>900 476 834</b>
+      </h2>
+      <br>
+      <h2>
+        <b><span class="iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span> valencia.madeiras@gmail.com</b>
+      </h2>
+    </div>
+    <div>
+      <div class="policy">
+        <p><a href="">Termos e Condições Gerais</a>  <br>
+          <a href="">Política de Privacidade e Cookies</a>  <br>
+          <a href="">Recrutamento</a> 
+        </p>
+        
       </div>
     </div>
+  </div>
 </footer>
 
   <script src="/scripts/main.js"></script>

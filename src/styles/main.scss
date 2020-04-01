@@ -8,6 +8,8 @@
 @import 'header';
 @import 'utilities';
 @import 'servicos';
+@import 'cart';
+@import 'produtos';
 
 body {
   background-color: white;
@@ -40,7 +42,7 @@ header {
 .mySlides img {
   box-sizing: border-box;
   width: 100%;
-  height: auto;
+  height: 70vh;
 }
 
 /* Next & previous buttons */
@@ -74,12 +76,13 @@ header {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: white;
   padding: 8px 20px;
   position: absolute;
   bottom: 100px;
   width: 100%;
   text-align: center;
+  text-shadow: 2px 2px 4px black;
 }
 
 /* The dots/bullets/indicators */
@@ -120,33 +123,33 @@ header {
 /* section with links to some pages */
 .container-products {
   padding-top: 110px;
+  width: 80%;
+  margin: auto;
 }
 
 .floor {
-  width: auto;
   height: 460px;
-  margin: 0 10% 0 10%;
-  background-color: grey;
+  background-image: url(https://i.ytimg.com/vi/lP7B9B7WX1E/maxresdefault.jpg);
+  background-size: cover;
 }
 
 .strips {
-  width: 320px;
-  height: 400px;
-  background-color: grey;
-  margin-left: 10%;
+  height: 350px;
+  background-image: url(https://ae01.alicdn.com/kf/HTB1i2cNbVuWBuNjSspnq6x1NVXap/30-30-2-7cm-que-entrela-am-telhas-de-revestimento-na-madeira-de-teca-cont-nua.jpg);
+  background-size: cover;
   margin-top: 80px;
   display: flex;
   float: left;
+  margin-right: 10px;
 }
 
 .videos {
-  width: 740px;
-  height: 400px;
+  height: 350px;
   display: flex;
   float: right;
-  margin-right: 10%;
   margin-top: 80px;
-  background-color: grey;
+  background-image: url(https://www.jornalcruzeiro.com.br/wp-content/uploads/2019/03/Casa-de-madeira-0-1280x720.jpg);
+  background-size: cover;
 }
 
 .titlePromos {
@@ -154,16 +157,24 @@ header {
   padding-top: 110px;
 }
 
+.container {
+  width: 80%;
+  margin: auto;
+}
+
 .sales {
-  margin: 0 10% 0 10%;
   display: flex;
+  height: 300px;
+  margin-bottom: 100px;
 }
 
 .promo {
+  display: flex;
+  float: left;
   border: 2px solid grey;
-  height: 200px;
-  width: 33%;
-  margin: 10px 10px;
+  height: auto;
+  height: 300;
+  margin-right: 20px;
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
