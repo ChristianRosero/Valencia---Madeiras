@@ -24,15 +24,100 @@ header {
   margin: 0 10% 0 10%;
 }
 
-.slide-images {
+/* ---------------Slider------------------- */
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
   width: 100%;
-  height: 550px;
-  //background-image: url(images/pavLam1.jpg);
-  display: flex;
-  justify-content: center;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  padding: 8px 20px;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
   text-align: center;
 }
 
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* section with links to some pages */
 .container-products {
   padding-top: 110px;
 }
@@ -79,4 +164,11 @@ header {
   height: 200px;
   width: 33%;
   margin: 10px 10px;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1800px) {
+  body {
+    max-width: 1600px;
+  }
 }

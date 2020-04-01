@@ -1,43 +1,49 @@
+.container-header {
+  display: flex;
+  margin: 0 10% 0 10%;
+}
+
+.clientArea {
+  font-size: 25px;
+  color: $main-color;
+  float: right;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.cart {
+  font-size: 25px;
+  color: $main-color;
+  float: right;
+  padding-top: 10px;
+}
+
 header img {
   align-items: center;
-  display: flex;
   height: auto;
   justify-content: center;
-  margin-left: 10%;
   text-align: center;
   width: 100px;
   float: left;
 }
 
+/* Hide the search bar by default */
 .search {
-  border-bottom: 1px solid grey;
-  height: 20px;
-  width: 50%;
+  display: none;
+  width: 60%;
   float: left;
-  margin-left: 4%;
-  display: flex;
-  align-items: center;
+}
+
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
   margin-top: 20px;
 }
 
-.clientArea {
-  height: 20px;
-  width: 20px;
-  float: left;
-  margin-top: 20px;
-  margin-right: 10%;
-}
-
-.cart {
-  height: 20px;
-  width: 20px;
-  float: right;
-  margin-top: 20px;
-  margin-right: 1%;
-}
-
-span {
-  background-color: $main-color;
+/* When the input field gets focus, change its width to 60% */
+input[type=text]:focus {
+  width: 60%;
 }
 
 .navbar {
@@ -86,19 +92,16 @@ span {
     display: block;
   }
 
+  .search {
+    display: block;
+  }
+
   .container-header {
     display: block;
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .search {
-    display: none;
-  }
-  //.container-header img {
-  //}
-}
-
+/* screen size 768 and up */
 @media only screen and (min-width: 768px) {
   .menu {
     display: none;
@@ -106,5 +109,16 @@ span {
 
   .navbar {
     display: block;
+  }
+}
+
+/* screen size 400 and down */
+@media only screen and (max-width: 400px) {
+  .clientArea {
+    font-size: 25px;
+    color: $main-color;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
   }
 }
