@@ -96,21 +96,33 @@ input[type=text]:focus {
   line-height: 35px;
 }
 
-.navbar-mobile {
-  display: none;
-  position: relative;
+.dropdown-content {
+  //display: none;
   width: 100%;
+  border: 1px solid black;
   height: 35px;
-  background-color: $main-color;
-  color: white;
+  background-color: $second-color;
   text-align: center;
   line-height: 35px;
+  color: white;
+
+  a {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+  }
 }
 
 /* screen size 501 and up */
 @media only screen and (min-width: 501px) {
   .menu {
     display: block;
+
+    :hover {
+      .dropdown-content {
+        display: block;
+      }
+    }
   }
 
   .search {

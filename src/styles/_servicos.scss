@@ -43,3 +43,9 @@ iframe {
     margin-top: 50px;
   }
 }
+
+@media only screen and (max-width: 599px) {
+  .section1 {
+    margin: 50px;
+  }
+}
