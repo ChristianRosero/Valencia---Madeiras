@@ -1,0 +1,21 @@
+.contacts {
+  width: 100% !important;
+  height: 150px;
+  background-color: #8d5524;
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.policy {
+  width: 100% !important;
+  height: 150px;
+  background-color: darkgrey;
+  text-align: center;
+  padding-top: 35px;
+}
+.policy  a {
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+  }

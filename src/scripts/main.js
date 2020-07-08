@@ -45,7 +45,7 @@ console.log = iva + shippingValue
 
 //--------------------- PRODUCTS PAGE ----------------
 
-const numItemsToGenerate = 20; //how many gallery items you want on the screen
+const numItemsToGenerate = 9; //how many gallery items you want on the screen
 const numImagesAvailable = 242; //how many total images are in the collection you are pulling from
 const imageWidth = 480; //your desired image width in pixels
 const imageHeight = 480; //desired image height in pixels
@@ -57,7 +57,7 @@ function renderGalleryItem(randomNumber){
     .then((response)=> {    
       let galleryItem = document.createElement('div');
       galleryItem.classList.add('gallery-item');
-      galleryItem.innerHTML = `<img class="gallery-image" src="${response.url}" alt="gallery image"/>`
+      galleryItem.innerHTML = `<img class="gallery-image col-xs-12" src="${response.url}" alt="gallery image"/>`
       $galleryContainer.appendChild(galleryItem);
     })
 }

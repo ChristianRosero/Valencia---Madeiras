@@ -336,3 +336,22 @@ gulp.task('default', [
   'sprites',
   'watch'
 ]);
+
+//  ============================================================
+//  php
+
+var php = require('gulp-connect-php');
+
+gulp.task('php', function(){
+  php.server({base:'./', port:8080, keepalive:true});
+});
+
+gulp.task('browserSync',['php'], function() {
+  browserSync.init({
+      proxy:"localhost:8080",
+      baseDir: "./",
+      open:true,
+      notify:false
+
+  });
+});
