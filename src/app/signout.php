@@ -1,4 +1,5 @@
 <?php
+// --- All fomrs to destroy session and reset cookeis
 session_start();
 session_unset();
 session_destroy();

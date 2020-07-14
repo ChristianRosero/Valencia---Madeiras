@@ -30,7 +30,7 @@ require_once('functions.php');
           echo "User verified!";
 
           $subject = 'Account verified';
-          $message = '<a href=http://localhost/app/verify.php?user=2>Signin into your account</a>';
+          $message = '<a href=http://localhost/app/index.php>Signin into your account</a>';
           // update user set status = 1 where id = 2
           $output = '<p>A thank you message has been sent to '.$email.'</p>';
 

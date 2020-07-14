@@ -4,25 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>sign</title>
-  <link rel="stylesheet" href="/styles/main.css">
-  <link rel="stylesheet" href="/styles/signup.css">
-  <link rel="stylesheet" href="/styles/header.css">
-  <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/utilities.css">
   <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/form.css">
 </head>
 <body>
   
 
 <?php
   require_once("functions.php");
-  require_once("includes/header.php");
 ?>
 <div class="container auth">
 <body>
   <main>
-    <div class="container auth">
-      <div>
         <form action="signup.php" method="post">
           <fieldset>
             <ul>
@@ -39,7 +33,7 @@
             </ul>
           </fieldset>
           <fieldset>
-            <input type="submit" value="Signup">
+            <input class="button" type="submit" value="Signup">
           </fieldset>
         </form>
         <a href="signin.php">Signin</a> | <a href="reset.php">Reset password</a><br><br>
@@ -68,7 +62,7 @@
                 echo "User signed up!";
 
                 $subject = 'Verify your account';
-                $message = 'Click the link to verify your account: <br><b><a href=https://www.app.com/verify.php?token='.$token.'&email='.$email.'>'.$token.'</a></b>';
+                $message = 'Click the link to verify your account: <br><b><a localhost/app/signin.php?token='.$token.'&email='.$email.'>'.$token.'</a></b>';
                 $output = '<p>A confirmation message has been sent to '.$email.'</p>';
 
                 email($email, $subject, $message, $output);
@@ -83,9 +77,6 @@
     ?>
 </div>
 
-<?php
-  require "includes/footer.php";
-?>
 
 </body>
 </html>
