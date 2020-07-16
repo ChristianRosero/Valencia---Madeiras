@@ -5,12 +5,11 @@
         exit;
     } else {
         require_once('../functions.php');
-        require_once('../includes/head.php');
         $section = !empty($_GET['s']) ? $_GET['s'] : null;
         $token = !empty($_GET['token']) ? $_GET['token'] : null;
 
 
-        $sql = "SELECT * FROM news WHERE token = ?";
+        $sql = "SELECT * FROM products WHERE token = ?";
         $stmt = conn()->prepare($sql);
         if ($stmt->execute([$token])) {
             $n = $stmt->rowCount();
@@ -26,11 +25,12 @@
     <div class="container">
       <?php require_once('../includes/menu.php'); ?>
       <div>
-
+        <!-- Section name -->
         <div class="section-title">
           <h1><?php echo $section; ?></h1>
         </div>
-        <form action="create.php" method="post">
+        <!-- to use the same page -->
+        <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="post">
           <fieldset>
             <ul>
               <li>
@@ -42,28 +42,28 @@
                 <textarea rows="3" name="summary"><?php echo !empty($r['summary']) ? $r['summary'] : null ; ?></textarea>
               </li>
               <li>
-                <label for="body">Body</label>
-                <textarea rows="10" name="body"><?php echo !empty($r['body']) ? $r['body'] : null ; ?></textarea>
+                <label for="price">Price</label>
+                <input type="number" value="price"><?php echo !empty($r['price']) ? $r['price'] : null ; ?></input>
               </li>
               <li>
-                <label for="author">Author</label>
-                <input type="text" name="author" value="<?php echo !empty($r['author']) ? $r['author'] : null ; ?>">
+                <label for="brand">Brand</label>
+                <input type="text" name="brand" value="<?php echo !empty($r['brand']) ? $r['brand'] : null ; ?>">
               </li>
               <?php
               if ($_SESSION['level'] >= 2) { ?>
                 <li>
-                  <label for="author">Status</label>
+                  <label for="status">Status</label>
                   <select name="status">
-                    <option value="0" <?php echo $r['status'] === 0 ? 'selected' : ''; ?> >Draft</option>
-                    <option value="1" <?php echo $r['status'] === 1 ? 'selected' : ''; ?>>Review</option>
-                    <option value="2" <?php echo $r['status'] === 2 ? 'selected' : ''; ?>>Published</option>
-                    <option value="3" <?php echo $r['status'] === 3 ? 'selected' : ''; ?>>Archived</option>
+                    <option value="0" <?php echo $r['status'] === 0 ? 'selected' : ''; ?> >Esboço</option>
+                    <option value="1" <?php echo $r['status'] === 1 ? 'selected' : ''; ?>>Rever</option>
+                    <option value="2" <?php echo $r['status'] === 2 ? 'selected' : ''; ?>>Publicar</option>
                   </select>
               </li>
               <?php } ?>
             </ul>
           </fieldset>
           <fieldset>
+            <!-- inputs needed for the form summit -->
             <input type="hidden" name="section" value="<?php echo $section; ?>">
             <input type="hidden" name="token" value="<?php echo $token; ?>">
             <input type="submit" value="Save">
@@ -73,8 +73,8 @@
         if (!empty($_POST)) {
             $title      = $_POST['title'];
             $summary    = $_POST['summary'];
-            $body       = $_POST['body'];
-            $author     = $_POST['author'];
+            $body       = $_POST['price'];
+            $author     = $_POST['brand'];
             
             $status     = !empty($_POST['status']) ? $_POST['status'] : 0;
             $token      = !empty($_POST['token']) ? $_POST['token'] : sha1(bin2hex(date('U')));
@@ -83,16 +83,16 @@
 
             if (!empty($_POST['token'])) {
                 if ($_SESSION['level'] >= 2) {
-                    $sql = "UPDATE news SET title = ?, summary = ?, body = ?, author = ?, status = ? WHERE token = ?";
+                    $sql = "UPDATE products SET title = ?, summary = ?, price = ?, brand = ?, status = ? WHERE token = ?";
                 } else {
-                    $sql = "UPDATE news SET title = ?, summary = ?, body = ?, author = ? WHERE token = ?";
+                    $sql = "UPDATE products SET title = ?, summary = ?, price = ?, brand = ? WHERE token = ?";
                 }
 
                 $stmt = conn()->prepare($sql);
                 $stmt->bindValue(1, $title, PDO::PARAM_STR);
                 $stmt->bindValue(2, $summary, PDO::PARAM_STR);
-                $stmt->bindValue(3, $body, PDO::PARAM_STR);
-                $stmt->bindValue(4, $author, PDO::PARAM_STR);
+                $stmt->bindValue(3, $price, PDO::PARAM_STR);
+                $stmt->bindValue(4, $brand, PDO::PARAM_STR);
 
 
                 if ($_SESSION['level'] >= 2) {
@@ -102,12 +102,12 @@
                     $stmt->bindValue(5, $token, PDO::PARAM_STR);
                 }
             } else {
-                $sql = "INSERT INTO news (title, summary, body, author, status, token, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO products (title, summary, body, author, status, token, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt = conn()->prepare($sql);
                 $stmt->bindValue(1, $title, PDO::PARAM_STR);
                 $stmt->bindValue(2, $summary, PDO::PARAM_STR);
-                $stmt->bindValue(3, $body, PDO::PARAM_STR);
-                $stmt->bindValue(4, $author, PDO::PARAM_STR);
+                $stmt->bindValue(3, $price, PDO::PARAM_STR);
+                $stmt->bindValue(4, $brand, PDO::PARAM_STR);
                 $stmt->bindValue(5, $status, PDO::PARAM_INT);
                 $stmt->bindValue(6, $token, PDO::PARAM_STR);
                 $stmt->bindValue(7, $timestamp, PDO::PARAM_STR);

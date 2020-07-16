@@ -1,0 +1,16 @@
+.app .container {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 160px 1fr;
+  margin: 40px auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app .menu ul + ul {
+  margin-top: 32px;
+}
