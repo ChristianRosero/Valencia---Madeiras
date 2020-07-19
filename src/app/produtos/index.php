@@ -37,13 +37,15 @@
         <?php
           $sql = "SELECT * FROM products WHERE status = ? ORDER BY date DESC";
           $stmt = conn()->prepare($sql);
-          if($stmt->execute([[1]])) {
+          $status = 2;
+          $stmt->bindParam(1, $status);
+          if($stmt->execute()) {
             $n = $stmt->rowCount();
             if($n > 0 ) {
               $r = $stmt->fetchall();
               $stmt = null;
 
-              var_dump($r);
+              var_dump(json_encode($r));
             } else {
               echo "Não existem registos. <a href='create.php'>Inserir</a>";
             }
