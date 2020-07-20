@@ -20,7 +20,6 @@
         } ?>
 
 <body class="app">
-  <?php require_once('../includes/header.php'); ?>
   <main>
     <div class="container">
       <?php require_once('../includes/menu.php'); ?>
@@ -73,8 +72,8 @@
         if (!empty($_POST)) {
             $title      = $_POST['title'];
             $summary    = $_POST['summary'];
-            $body       = $_POST['price'];
-            $author     = $_POST['brand'];
+            $price       = $_POST['price'];
+            $brand     = $_POST['brand'];
             
             $status     = !empty($_POST['status']) ? $_POST['status'] : 0;
             $token      = !empty($_POST['token']) ? $_POST['token'] : sha1(bin2hex(date('U')));
@@ -91,7 +90,7 @@
                 $stmt = conn()->prepare($sql);
                 $stmt->bindValue(1, $title, PDO::PARAM_STR);
                 $stmt->bindValue(2, $summary, PDO::PARAM_STR);
-                $stmt->bindValue(3, $price, PDO::PARAM_STR);
+                $stmt->bindValue(3, $price, PDO::PARAM_INT);
                 $stmt->bindValue(4, $brand, PDO::PARAM_STR);
 
 
@@ -102,7 +101,7 @@
                     $stmt->bindValue(5, $token, PDO::PARAM_STR);
                 }
             } else {
-                $sql = "INSERT INTO products (title, summary, body, author, status, token, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO products (title, summary, price, brand, status, token, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt = conn()->prepare($sql);
                 $stmt->bindValue(1, $title, PDO::PARAM_STR);
                 $stmt->bindValue(2, $summary, PDO::PARAM_STR);
@@ -123,7 +122,6 @@
       </div>
     </div>
   </main>
-  <?php require_once('../includes/footer.php'); ?>
 
 </body>
 </html>

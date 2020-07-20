@@ -5,7 +5,8 @@
         exit;
     } else {
         require_once('../functions.php');
-        echo 'Olá, '.$_SESSION['email']; ?>
+        echo 'Olá, '.$_SESSION['email']; 
+        $section = 'Produtos';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,7 @@
 
               var_dump(json_encode($r));
             } else {
-              echo "Não existem registos. <a href='create.php'>Inserir</a>";
+              echo "Não existem registos. <a href='../crud/create.php'>Inserir</a>";
             }
           }
         ?>

@@ -40,15 +40,17 @@ function email($to, $subject, $message, $output)
     $mail = new PHPMailer(true);
 
     try {
-        //Server settings
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        //Server settings (usar os comentados para o localhost)
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
+        //$mail->Host       = 'hosting63.serverhs.org';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'christianwork2010@gmail.com';
+        //$mail->Username   = 'mail_teste@christianvr.pt';
         $mail->Password   = '';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
+        //$mail->Port       = 21;
 
         //Recipients
         $mail->setFrom('christianwork2010@gmail.com', 'Madeiras');
