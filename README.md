@@ -2,6 +2,7 @@
 
 para ver localmente requer instalação de:
  node v12
+ PHP 7.3.18-1+ubuntu18.04.1+deb.sury.org+1
  xamp
  composer e dependencias de php
  npm install
